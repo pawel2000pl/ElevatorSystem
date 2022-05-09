@@ -83,11 +83,11 @@ class Passenger
 public class ElevatorSystemTest
 {
     
-    public static double test(ElevatorSystem system, int levelCount, int passengerCount, int maxDelay)
+    public static double test(ElevatorSystem system, int levelCount, int passengerCount, int maxDelay, int seed)
     {    
         int steps = 0;
         int doneCount = 0;
-        Random rnd = new Random();         
+        Random rnd = new Random(seed);         
         Passenger[] passengers = new Passenger[passengerCount];
         for (int i=0;i<passengerCount;i++)
             passengers[i] = new Passenger(rnd, 0, levelCount, maxDelay + 1, system);
@@ -122,46 +122,47 @@ public class ElevatorSystemTest
 
     public static void main(String[] args)
     {        
+        int seed = (new Random()).nextInt();
         System.out.println("Fifo");
         int i=0;
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 20000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 1000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 100) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 20, 1000, 100, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 20000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 1000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 100) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 1000, 100, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 20000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 1000) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 100) + " steps per passenger");
+        System.out.println(test(new FifoElevatorSystem(10), 200, 10000, 100, seed) + " steps per passenger");
         System.out.println("Smarter");
         i=0;
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 20, 1000, 20000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 20, 1000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 20, 1000, 1000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 20, 1000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 20, 1000, 100) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 20, 1000, 100, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 1000, 20000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 1000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 1000, 1000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 1000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 1000, 100) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 1000, 100, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 10000, 20000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 10000, 20000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 10000, 1000) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 10000, 1000, seed) + " steps per passenger");
         System.out.println("Test " + ++i);
-        System.out.println(test(new ElevatorSystem(10), 200, 10000, 100) + " steps per passenger");
+        System.out.println(test(new ElevatorSystem(10), 200, 10000, 100, seed) + " steps per passenger");
         System.out.println();
     }
 }

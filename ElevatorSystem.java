@@ -51,6 +51,11 @@ public class ElevatorSystem
         fElevators.get(ID).update(currentLevel, currentDirection);
     }
     
+    public boolean shouldTake(int ID, int direction)
+    {
+        return fElevators.get(ID).shouldTake(direction);
+    }
+    
     public ElevatorStatus[] status()
     {
         int count = fElevators.size();

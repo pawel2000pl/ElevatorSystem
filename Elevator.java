@@ -18,4 +18,6 @@ public interface Elevator
     public void update(int currentLevel, int currentDirection);    
     //zwraca przewidywany czas dojazdu po odbiór. jest jedynie poglądowy, nie musi być rzeczywisty
     public int expectedTime(int level, int direction);    
+    //zwraca, czy pasażer powinien wsiąść do windy (a nie powinien, jeżeli winda jedzie w przeciwną stronę)
+    public boolean shouldTake(int direction);    
 }

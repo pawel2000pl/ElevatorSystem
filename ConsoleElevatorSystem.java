@@ -36,7 +36,7 @@ public class ConsoleElevatorSystem extends ElevatorSystem
         {
             if (commandParameters.length == 3 && commandParameters[0].equals("pickup"))
             {
-                pickup(Integer.valueOf(commandParameters[1]), Integer.valueOf(commandParameters[2]));
+                System.out.println(pickup(Integer.valueOf(commandParameters[1]), Integer.valueOf(commandParameters[2])));
                 return true;
             }
             return false;

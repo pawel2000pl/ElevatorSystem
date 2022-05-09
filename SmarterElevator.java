@@ -165,6 +165,11 @@ public class SmarterElevator implements Elevator
             return null;
         }
     }
+        
+    public boolean shouldTake(int direction) 
+    {
+        return fDirection == direction;
+    }
     
     public int expectedTime(int level, int direction)
     {   

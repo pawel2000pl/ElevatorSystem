@@ -79,6 +79,11 @@ public class FifoElevator implements Elevator
         return result;
     }
     
+    public boolean shouldTake(int direction) //najprostszy przypadek
+    {
+        return true;
+    }
+    
     public void update(int currentLevel, int currentDirection)
     {
         fCurrentLevel = currentLevel;
